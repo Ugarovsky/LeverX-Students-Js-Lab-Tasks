@@ -1,5 +1,3 @@
-
-@import "fonts.css" print;
 *{
 box-sizing: border-box;
 margin: 0;
@@ -82,16 +80,16 @@ font-family:sans-serif;
     border-bottom: 1px solid #e2e2e2;
 }
 
-.resources{
+.requisites{
     display: flex;
     padding: 2%;
 }
-.resource-names{
+.requisites-names{
     text-align: right;
     flex: 1;
 }
 
-.resource-values{
+.requisites-values{
     flex:3;
 }
 
@@ -140,7 +138,7 @@ background-color:white;
     flex:3;
     height: 5vh;
 }
-input{
+.order-search input{
    border:0;
    border-top: 1px solid  #a9a9a9;
    border-bottom: 1px solid  #a9a9a9;  
@@ -179,7 +177,7 @@ input{
 background-color: #e8eff7;
 }
 
-.number-info, .time-info{
+.number-info, .order-status{
     flex:2;
 }
 
@@ -202,7 +200,7 @@ background-color: #e8eff7;
     border-spacing:0;
     text-align: center;
 }
-tr:first-child{
+.line-items tr:first-child{
     background: #f7f7f7;
     min-height: 3vw;
 }
@@ -211,8 +209,7 @@ tr:first-child{
     justify-content: space-around;
     border-top: 1px solid #e9e9e9;
 }
-   .under-content, .under-menu
-   {
+   .under-content, .under-menu{
    padding: 0 1%; 
 }
 
@@ -226,7 +223,7 @@ tr:first-child{
     color:#333333;
 }
 
-.time-info p{
+.order-status p{
     color: green;
 }
 
@@ -238,7 +235,7 @@ tr:first-child{
     direction: none;
     margin: auto;
 }
-.main-view p,li{
+.main-view p,.main-view li{
     color:#616d72;
 }
 
@@ -249,11 +246,11 @@ tr:first-child{
     min-height: 1.8em;
 }
 
-.time-info{
+.order-status{
     text-align: right;
 }
 
-.time-info time{
+.order-status time{
     font-size: 1.5vw;
 }
 .over-menu i{
@@ -281,18 +278,18 @@ tr:first-child{
     margin: 0 2%;
 }
 
-td:first-child{
+.line-items td:first-child{
     text-align: left;
 }
-td:last-child {
+.line-items td:last-child {
 text-align: right;
 }
 
-li{
+.content li, .left-menu{
     list-style-type: none;
 }
 
-input::placeholder{
+.order-search input::placeholder{
     font-style: italic;
     padding: 0% 2%;
 }
@@ -305,10 +302,10 @@ input::placeholder{
     text-align: left;
 }
 
-.resource-values li{
+.requisites-values li{
     color:#333333;
 }
-.resource-values li ,.resource-names li {
+.requisites-values li ,.requisites-names li {
     min-height: 1.5vw;
 }
 .order-info li{
@@ -318,13 +315,13 @@ input::placeholder{
 
  @media only screen and (max-width: 750px ){
     .left-menu{
-        display: none;
+      display: none;
     }
 
-    .resource-names{
+    .requisites-names{
         flex: 2;
     }
-    .resource-values{
+    .requisites-values{
         flex: 2;
     }
 
@@ -334,7 +331,18 @@ input::placeholder{
     .over-menu{
         display: none;
     }
+  
+    #header-content, #footer-content{
+        width: 100%;
+        margin: 0;
+        left:0;
+    }
 
+    #main-view{
+        margin:5vh 0;
+        width: 100%;
+    }
+    
     .content img{
         width: 10%;
     }
