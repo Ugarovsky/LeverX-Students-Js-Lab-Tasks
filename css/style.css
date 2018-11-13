@@ -135,14 +135,15 @@ background-color:white;
 }
 
 .order-search{
+    z-index: 2;
     flex:3;
-    height: 5vh;
+    min-height: 5vh;
     max-width: 75%;
 }
 
 .search-icons img{
     vertical-align: middle;
-    padding: 0.5%;
+    margin-top: 0.7vh;
 }
 .order-search{
    border:0;
@@ -150,6 +151,7 @@ background-color:white;
    border-bottom: 1px solid  #a9a9a9;  
 }
 .search-icons{
+    z-index: 2;
     background: white;
     display: table-cell;
     vertical-align: middle;
@@ -326,6 +328,10 @@ text-align: right;
       display: none;
     }
 
+    .over-content{
+        display: none;
+    }
+
     .requisites-names{
         flex: 2;
     }
@@ -355,5 +361,11 @@ text-align: right;
         width: 10%;
     }
 
+}
+
+@media only screen and (max-height: 550px ){
+ .search-icons img{
+     display: none;
+ }
 }
 
