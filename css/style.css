@@ -143,7 +143,7 @@ background-color:white;
 
 .search-icons img{
     vertical-align: middle;
-    margin-top: 0.7vh;
+    margin-top: 0.5vh;
 }
 .order-search{
    border:0;
@@ -157,7 +157,7 @@ background-color:white;
     vertical-align: middle;
     text-align: center;
     flex:1;
-    height: 5vh;
+    min-height: 5vh;
     border: 1px solid #a9a9a9;
     border-left: 0;
 }
@@ -304,6 +304,10 @@ text-align: right;
     max-width: 75%;
 }
 
+.order-search:hover, .order-box:hover{
+    cursor: pointer;
+}
+
 .order-number li{
     text-align: right;
 }
@@ -363,9 +367,4 @@ text-align: right;
 
 }
 
-@media only screen and (max-height: 550px ){
- .search-icons img{
-     display: none;
- }
-}
 
