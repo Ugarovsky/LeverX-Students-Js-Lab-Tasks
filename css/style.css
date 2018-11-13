@@ -137,8 +137,14 @@ background-color:white;
 .order-search{
     flex:3;
     height: 5vh;
+    max-width: 75%;
 }
-.order-search input{
+
+.search-icons img{
+    vertical-align: middle;
+    padding: 0.5%;
+}
+.order-search{
    border:0;
    border-top: 1px solid  #a9a9a9;
    border-bottom: 1px solid  #a9a9a9;  
@@ -163,6 +169,7 @@ background-color:white;
 
 .left-menu{
     flex:1;
+    max-width: 25%;
 }
 
 .order-box{
@@ -190,7 +197,7 @@ background-color: #e8eff7;
 .order-list{
     overflow: auto;
     background-color: white;
-    max-height: 85vh;
+    max-height: 90vh;
 }
 
 .line-items table{
@@ -292,6 +299,7 @@ text-align: right;
 .order-search input::placeholder{
     font-style: italic;
     padding: 0% 2%;
+    max-width: 75%;
 }
 
 .order-number li{
@@ -342,7 +350,7 @@ text-align: right;
         margin:5vh 0;
         width: 100%;
     }
-    
+
     .content img{
         width: 10%;
     }
