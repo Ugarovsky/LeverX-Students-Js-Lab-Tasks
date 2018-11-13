@@ -40,7 +40,8 @@ font-family:sans-serif;
 #footer-content{
     background-color: #2f3b47;
     left:50%;
-    max-height: 5vh;
+    min-height: 20px;
+    height: 5vh;
     margin-left: -40%;
     width: 80%;
     position: fixed;
@@ -143,7 +144,7 @@ background-color:white;
 
 .search-icons img{
     vertical-align: middle;
-    margin-top: 0.5vh;
+    margin-top: 0.2vh;
 }
 .order-search{
    border:0;
@@ -167,6 +168,7 @@ background-color:white;
 }
 .search{
     display: flex;
+    z-index: 2;
 }
 
 .left-menu{
@@ -199,7 +201,7 @@ background-color: #e8eff7;
 .order-list{
     overflow: auto;
     background-color: white;
-    max-height: 90vh;
+    max-height: 85vh;
 }
 
 .line-items table{
