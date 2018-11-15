@@ -20,6 +20,7 @@ font-family:sans-serif;
     margin: 5vh auto;
     width: 80%;
     display: flex;
+    position: relative;
 }
 
 .content img{
@@ -32,7 +33,7 @@ font-family:sans-serif;
     width: 80%;
     position: fixed;
     display: flex;
-    min-height: 5vh;
+    height: 5vh;
     top:0;
     text-align: center;
 }
@@ -63,11 +64,9 @@ font-family:sans-serif;
     flex:3;
     background-color: #eff4f8;
     border-bottom: 2px solid #e3ebef;
-    padding: 0.5% 0;
 }
 
 .over-menu{
-    padding: 0.5% 0;
     flex:1;
     background-color: white;  
 }
@@ -140,11 +139,19 @@ background-color:white;
     flex:3;
     min-height: 5vh;
     max-width: 75%;
+    padding: 0 5%;
 }
 
-.search-icons img{
-    vertical-align: middle;
-    margin-top: 0.2vh;
+.search{
+    border: 1px solid black;
+}
+
+.search input{
+    flex: 2;
+    background: white;
+    border: 0;
+
+    
 }
 .order-search{
    border:0;
@@ -159,18 +166,30 @@ background-color:white;
     text-align: center;
     flex:1;
     min-height: 5vh;
-    border: 1px solid #a9a9a9;
+    border: 0;
     border-left: 0;
+    display: flex;
+}
+
+
+
+.search{
+    display: flex;
 }
 
 .search-icons img{ 
         width:40%;
 }
-.search{
+.search-function{
     display: flex;
     z-index: 2;
 }
 
+
+#header-content p{
+    padding: 0.5% 0;
+    font-size: 3vh;
+}
 .left-menu{
     flex:1;
     max-width: 25%;
@@ -198,10 +217,11 @@ background-color: #e8eff7;
     flex:3;
 }
 
-.order-list{
+#order-list{
     overflow: auto;
     background-color: white;
-    max-height: 85vh;
+    height: 85vh;
+
 }
 
 .line-items table{
@@ -265,7 +285,8 @@ background-color: #e8eff7;
     font-size: 1.5vw;
 }
 .over-menu i{
-    padding: 0 2%;
+    padding:2%;
+    font-size: 1.5vw;
     float: left;
 }
 
@@ -302,9 +323,9 @@ text-align: right;
 
 .order-search input::placeholder{
     font-style: italic;
-    padding: 0% 2%;
     max-width: 75%;
 }
+
 
 .order-search:hover, .order-box:hover{
     cursor: pointer;
@@ -352,6 +373,7 @@ text-align: right;
         width: 100%;
         margin: 0;
         left:0;
+        vertical-align: middle;
     }
 
     #main-view{
@@ -362,7 +384,4 @@ text-align: right;
     .content img{
         width: 10%;
     }
-
 }
-
-
