@@ -23,7 +23,7 @@ font-family:sans-serif;
     position: relative;
 }
 
-.content img{
+#content img{
     width: 6%;
 }
 
@@ -81,16 +81,8 @@ font-family:sans-serif;
 }
 
 .requisites{
-    display: flex;
-    padding: 2%;
-}
-.requisites-names{
-    text-align: right;
-    flex: 1;
-}
-
-.requisites-values{
-    flex:3;
+    display: block;
+    padding: 2% 5%;
 }
 
 .car-or-human-panel{
@@ -106,7 +98,7 @@ font-family:sans-serif;
    border-bottom: 2px solid blue;
 }
 
-.order-info{
+#order-info{
     background-color: #eff4f8;
     min-height: 20vh;
     padding: 4%;
@@ -211,7 +203,7 @@ background-color: #e8eff7;
     flex:2;
 }
 
-.content{
+#content{
     max-height:90vh;
     overflow: auto;
     flex:3;
@@ -317,7 +309,7 @@ background-color: #e8eff7;
 text-align: right;
 }
 
-.content li, .left-menu{
+#content li, .left-menu{
     list-style-type: none;
 }
 
@@ -345,7 +337,7 @@ text-align: right;
 .requisites-values li ,.requisites-names li {
     min-height: 1.5vw;
 }
-.order-info li{
+#order-info li{
     text-align: left;
     min-height: 5vh;
 }
@@ -381,7 +373,7 @@ text-align: right;
         width: 100%;
     }
 
-    .content img{
+    #content img{
         width: 10%;
     }
 }

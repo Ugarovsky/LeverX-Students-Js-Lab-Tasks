@@ -1,24 +1,4 @@
-    //fast search code
-
-            // var createdAt = this.OrderInfo.createdAt;
-            // var customer = this.OrderInfo.customer;
-            // var status = this.OrderInfo.status;
-            // var shippedAt = this.OrderInfo.shippedAt;
-
-            // var name = this.ShipTo.name;
-            // var Address = this.ShipTo.Address;
-            // var ZIP = this.ShipTo.ZIP;
-            // var Region = this.ShipTo.Region;
-            // var Country = this.ShipTo.Country;
-
-            // var firstName = this.CustomerInfo.firstName;
-            // var lastName = this.CustomerInfo.lastName;
-            // var address = this.CustomerInfo.address;
-            // var phone = this.CustomerInfo.phone;
-            // var email = this.CustomerInfo.email;
-
-
-        //add object            
+        //add list objects         
          for (var i = 0; i < Orders.length; i++) {
 			var orderID = document.createTextNode("Order " + Orders[i].id);
             var createdAt = document.createTextNode(Orders[i].OrderInfo.createdAt);
@@ -39,6 +19,8 @@
 
             var a = document.getElementById("order-list");
             a.appendChild(newOrderBox);
+            newOrderBox.id= i + 1;
+            newOrderBox.setAttribute('onClick','reply_click(this.id)');
 
             newOrderBox.appendChild(numberInfo);
             numberInfo.appendChild(IDInfo);
@@ -58,12 +40,42 @@
             newOrderBox.appendChild(orderState);
         };
 
-        //order count
+        //renew data
+        var shipName = document.getElementById("name");
+        var shipStreet = document.getElementById("street");
+        var shipCode = document.getElementById("code");
+        var shipCity = document.getElementById("city");
+        var shipCountry = document.getElementById("county");
+
+        function reply_click(nowId){
+        var orderTittle = document.getElementById("order-title");
+        var orderCustomer = document.getElementById("order-customer");
+        var orderedDate = document.getElementById("ordered-date");
+        var orderShipped = document.getElementById("shipped-date");
         
+        orderTittle.innerHTML = "Order: " + Orders[nowId-1].id;
+        orderCustomer.innerHTML = "Customer:" + Orders[nowId-1].OrderInfo.customer;
+        orderedDate.innerHTML = "Created:" + Orders[nowId-1].OrderInfo.createdAt; 
+        orderShipped.innerHTML = "Shipped:" + Orders[nowId-1].OrderInfo.shippedAt;
+
+        shipName.innerHTML = "Name: "+ Orders[nowId-1].ShipTo.name;
+        shipStreet.innerHTML = "Street: "+ Orders[nowId-1].ShipTo.Address;
+        shipCode.innerHTML = "Zip Code: "+ Orders[nowId-1].ShipTo.ZIP;
+        shipCity.innerHTML = "City: "+ Orders[nowId-1].ShipTo.Region;
+        shipCountry.innerHTML = "County: "+ Orders[nowId-1].ShipTo.Country;
+        };
+
+        function getCustomerInfo(nowId){
+            shipName.innerHTML = "First Name: "+ Orders[nowId-1].CustomerInfo.firstName;
+            shipStreet.innerHTML = "Last Name: "+ Orders[nowId-1].CustomerInfo.lastName;
+            shipCode.innerHTML = "Address: "+ Orders[nowId-1].CustomerInfo.address;
+            shipCity.innerHTML = "Phone: "+ Orders[nowId-1].CustomerInfo.phone;
+            shipCountry.innerHTML = "E-Mail: "+ Orders[nowId-1].CustomerInfo.email;
+        }
+        //order count
         var order = document.createTextNode("order(" + i + ")");
         var orderCount = document.getElementsByClassName("over-menu");
         orderCount[0].appendChild(order);
-
 
         //fast search
         var myInput= document.querySelector(".order-search");
