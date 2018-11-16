@@ -13,7 +13,7 @@
         <body id="index-body">
         <header id="header-content">
                 <div class="over-menu"><i class="fas fa-chevron-left"></i>       
-                        <p class="order-count"></p>
+                        <p id="order-count"></p>
                 </div>
                 <div class="over-content">
                 
@@ -26,8 +26,8 @@
                         <div class="search">
                                 <input type="text" placeholder="Поиск" class="order-search">
                                 <div class="search-icons">
-                                        <input type="button" class="search-function">
-                                        <input type="button" class="refresh-function">
+                                        <input type="button" onclick="startSearch()" class="search-function">
+                                        <input type="button" onclick="refreshSearch()" class="refresh-function">
                                 </div>
                         </div>
                         <section>
@@ -85,42 +85,8 @@
                                                 <td>Quality</td>
                                                 <td>Total</td>
                                         </tr>
-                                        <tr>
-                                                <td>
-                                                        <h3>Vlad pipko</h1>
-                                                                <p>1524</p>
-                                                </td>
-                                                <td><strong> 65</strong> EUR</td>
-                                                <td>312</td>
-                                                <td><strong> 265</strong> EUR</td>
-                                        </tr>
-                                        <tr>
-                                                <td>
-                                                        <h3>Vlad pipko</h1>
-                                                                <p>1524</p>
-                                                </td>
-                                                <td><strong>65</strong> EUR</td>
-                                                <td>1923</td>
-                                                <td><strong> 234</strong> EUR</td>
-                                        </tr>
-                                        <tr>
-                                                <td>
-                                                        <h3>Vlad pipko</h1>
-                                                                <p>1524</p>
-                                                </td>
-                                                <td><strong>65</strong> EUR</td>
-                                                <td>920</td>
-                                                <td><strong> 652</strong> EUR</td>
-                                        </tr>
-                                        <tr>
-                                                <td>
-                                                        <h3>Vlad pipko</h1>
-                                                                <p>1524</p>
-                                                </td>
-                                                <td><strong>65</strong> EUR</td>
-                                                <td>250</td>
-                                                <td><strong> 625</strong> EUR</td>
-                                        </tr>
+                                        <article id="table-values">
+                                </article>
                                 </table>
                         </article>
                 </div>

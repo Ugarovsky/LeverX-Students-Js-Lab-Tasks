@@ -1,10 +1,16 @@
-        //add list objects         
-         for (var i = 0; i < Orders.length; i++) {
-			var orderID = document.createTextNode("Order " + Orders[i].id);
-            var createdAt = document.createTextNode(Orders[i].OrderInfo.createdAt);
-            var customer = document.createTextNode(Orders[i].OrderInfo.customer);
-            var orderStatus = document.createTextNode(Orders[i].OrderInfo.status);           
-            var shippedAt = document.createTextNode("Shipped:" + Orders[i].OrderInfo.shippedAt);
+var shipName = document.getElementById("name");
+var shipStreet = document.getElementById("street");
+var shipCode = document.getElementById("code");
+var shipCity = document.getElementById("city");
+var shipCountry = document.getElementById("county");
+        //add list objects      
+window.onload = function(){   
+         for (var count = 0; count < Orders.length; count++) {
+			var orderID = document.createTextNode("Order " + Orders[count].id);
+            var createdAt = document.createTextNode(Orders[count].OrderInfo.createdAt);
+            var customer = document.createTextNode(Orders[count].OrderInfo.customer);
+            var orderStatus = document.createTextNode(Orders[count].OrderInfo.status);           
+            var shippedAt = document.createTextNode("Shipped:" + Orders[count].OrderInfo.shippedAt);
 
             var newOrderBox = document.createElement("li");
             newOrderBox.className="order-box";
@@ -19,7 +25,7 @@
 
             var a = document.getElementById("order-list");
             a.appendChild(newOrderBox);
-            newOrderBox.id= i + 1;
+            newOrderBox.id= count + 1;
             newOrderBox.setAttribute('onClick','reply_click(this.id)');
 
             newOrderBox.appendChild(numberInfo);
@@ -38,16 +44,12 @@
             timeInfo.appendChild(createdAt);
             statusInfo.appendChild(orderStatus);
             newOrderBox.appendChild(orderState);
+
         };
-
+        getOrderCount(count);
+};
         //renew data
-        var shipName = document.getElementById("name");
-        var shipStreet = document.getElementById("street");
-        var shipCode = document.getElementById("code");
-        var shipCity = document.getElementById("city");
-        var shipCountry = document.getElementById("county");
-
-        function reply_click(nowId){
+function reply_click(nowId){
         var orderTittle = document.getElementById("order-title");
         var orderCustomer = document.getElementById("order-customer");
         var orderedDate = document.getElementById("ordered-date");
@@ -63,31 +65,61 @@
         shipCode.innerHTML = "Zip Code: "+ Orders[nowId-1].ShipTo.ZIP;
         shipCity.innerHTML = "City: "+ Orders[nowId-1].ShipTo.Region;
         shipCountry.innerHTML = "County: "+ Orders[nowId-1].ShipTo.Country;
-        };
 
-        function getCustomerInfo(nowId){
+         //active list element
+        var newOrderBox = document.body.getElementsByClassName("order-box");
+        for(var i = 1 ; i <= newOrderBox.length; i++){
+            if ( i == +nowId){
+                newOrderBox[i-1].className = "order-box active-list";
+            }
+            else{
+                newOrderBox[i-1].className ="order-box no-active";
+            }
+        }
+};
+function getCustomerInfo(nowId){
             shipName.innerHTML = "First Name: "+ Orders[nowId-1].CustomerInfo.firstName;
             shipStreet.innerHTML = "Last Name: "+ Orders[nowId-1].CustomerInfo.lastName;
             shipCode.innerHTML = "Address: "+ Orders[nowId-1].CustomerInfo.address;
             shipCity.innerHTML = "Phone: "+ Orders[nowId-1].CustomerInfo.phone;
             shipCountry.innerHTML = "E-Mail: "+ Orders[nowId-1].CustomerInfo.email;
-        }
-        //order count
-        var order = document.createTextNode("order(" + i + ")");
-        var orderCount = document.getElementsByClassName("over-menu");
-        orderCount[0].appendChild(order);
-
-        //fast search
-        var myInput= document.querySelector(".order-search");
-        myInput.addEventListener("keyup", function(e) {
-            const term = e.target.value.toLowerCase();
+}
+//order count
+function getOrderCount(count){
+        var order = document.createTextNode("order(" + count + ")");
+        var orderCount = document.getElementById("order-count");
+        orderCount.textContent = "";
+        orderCount.appendChild(order);
+}
+//search
+function startSearch() {
+            var orderCount = document.getElementById("order-count");
+            var count = 0;
+            var myInput= document.querySelector(".order-search");
+            const term = myInput.value.toLowerCase();
             const orders = document.body.getElementsByClassName("order-box");
             Array.from(orders).forEach(function(newOrderBox){
                 const title = newOrderBox.firstElementChild.textContent;
                 if(title.toLowerCase().indexOf(term) != -1){
                     newOrderBox.style.display = "flex";
+                    count++;
                 } else {
                     newOrderBox.style.display = "none";
                 };
             });
+            getOrderCount(count);
+};
+function refreshSearch(){
+            var count = 0;
+            var myInput= document.querySelector(".order-search");
+            myInput.value = "";
+            const orders = document.body.getElementsByClassName("order-box");
+            Array.from(orders).forEach(function(newOrderBox){
+                count++;
+                const title = newOrderBox.firstElementChild.textContent;
+                    newOrderBox.style.display = "flex";
         });
+        getOrderCount(count);
+}
+
+

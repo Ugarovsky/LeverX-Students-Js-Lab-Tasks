@@ -342,6 +342,11 @@ text-align: right;
     min-height: 5vh;
 }
 
+.active-list{
+    background:rgba(0, 207, 207, 0.609);
+}
+
+
  @media only screen and (max-width: 750px ){
     .left-menu{
       display: none;
@@ -376,4 +381,6 @@ text-align: right;
     #content img{
         width: 10%;
     }
+    
 }
+
