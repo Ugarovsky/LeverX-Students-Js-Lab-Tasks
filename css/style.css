@@ -377,3 +377,7 @@ text-align: right;
         width: 10%;
     }
 }
+
+.header-item {
+    cursor: pointer;
+}
